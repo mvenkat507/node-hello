@@ -1,21 +1,15 @@
 pipeline {
-  agent any {
+    agent any
     stages {
-      stage("build") {
-        steps {
-          echo "Building the application......"
+        stage('build') {
+            steps {
+                echo 'Hello World'
+            }
         }
-      }
-      stage("test") {
-        steps {
-          echo "testing the application......"
-        }
-      }
-      stage("deploy") {
-        steps {
-          echo "Deploying the application......"
-        }
-      }
     }
-  }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+    }
 }
